@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With in image popup</title>
+</head>
+<style>
+    .box {
+        margin: 70px;
+        width: 350px;
+        height: 350px;
+        background-image: url('./abdulrazzaqchohan.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .bottom {
+        height: 40%;
+        width: 100%;
+        background: linear-gradient(transparent, black);
+        position: absolute;
+        bottom: -40%;
+    }
+
+    .box:hover .bottom {
+        transition: all .6s ease-in;
+        bottom: 0;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="bottom"></div>
+    </div>
+</body>
+
+</html>

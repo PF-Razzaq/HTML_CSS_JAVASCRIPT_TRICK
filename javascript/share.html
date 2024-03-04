@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share</title>
+</head>
+<style>
+    .share-btn::after {
+        content: 'Your Friends';
+    }
+
+    .share-btn::before {
+        content: 'Please';
+    }
+</style>
+
+<body>
+    <button class="share-btn">Share</button>
+</body>
+
+</html>
+<script>
+    document.querySelector(".share-btn").addEventListener('click', () => {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Web Share API Sample',
+                text: 'Hello World! This is a test of the Web Share API.',
+                url: 'http://127.0.0.1:5500/javascript/share.html'
+            })
+                .then(() => console.log('Successful share'))
+                .catch((error) => console.log('Error sharing', error));
+        } else {
+            alert("Your browser doesn't support web sharing");
+        }
+    })
+</script>
